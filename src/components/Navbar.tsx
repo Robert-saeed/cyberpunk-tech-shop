@@ -6,10 +6,19 @@ function Navbar() {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
 
   useGSAP(() => {
-    gsap.fromTo(
+    const tl = gsap.timeline()
+    tl.fromTo("nav", {
+      y: "-100px",
+    }, {
+      y: "-6px",
+      duration: 2.5,
+      ease: "power1.out"
+    })
+
+    tl.fromTo(
       "nav",
       {
-        y: "-5px",
+        y: "-6px",
         boxShadow: "0 5px 10px rgba(255,255,255,0.10)",
       },
       {
@@ -24,7 +33,7 @@ function Navbar() {
   });
 
   return (
-    <div className="nav fixed top-0 left-0 w-full z-50 flex justify-center">
+    <div className="nav fixed top-1.5 left-0 w-full z-50 flex justify-center">
       <nav className="w-[80%] mt-5 px-6 py-4 flex justify-between items-center bg-black/40 backdrop-blur-md border border-zinc-800/80 rounded-full shadow-[0_5px_10px_rgba(255,255,255,0.5)]">
         <div className="text-xl md:text-2xl font-black tracking-wider text-pink-500 select-none">
           CYBER
