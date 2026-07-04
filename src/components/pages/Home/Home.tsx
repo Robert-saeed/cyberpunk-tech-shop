@@ -1,3 +1,4 @@
+import Categories from "./Categories";
 import Hero from "./Hero";
 import Products from "./Products";
 
@@ -6,9 +7,7 @@ function Home() {
     <>
       <Hero />
       <Products />
-      <div className="h-screen w-screen flex items-center justify-center">
-        <h2 className="text-4xl font-bold">Welcome to our store!</h2>
-      </div>
+      <Categories />
     </>
   );
 }
